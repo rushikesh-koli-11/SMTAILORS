@@ -1,0 +1,99 @@
+body {
+    /* padding-top: 0px; */
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.red{
+    color: red;
+    font-weight: 600;
+}
+
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1619252584172-a83a949b6efd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;          /* This makes the background image cover the entire element */
+    background-position: center;     /* This positions the image in the center */
+    background-repeat: no-repeat;    /* This prevents the image from repeating */
+    height: 100vh;                  
+    margin: 0;
+    
+}
+
+
+
+.containerr {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* height: 100vh; Full viewport height */
+    /* border: 1px solid #ccc; Optional border for visualization */
+}
+.center-div {
+    text-align: center; /* Center text and buttons within the div */
+}
+.button {
+    margin: 5px; /* Optional margin between buttons */
+
+}
+
+.bradius{
+    border-radius: 2rem !important;
+}
+
+.backcut{
+    background-color: red !important;
+    border-radius: 2rem 0em 2rem 0rem !important;
+    height: 2.5rem !important;
+    width: 20rem !important;
+}
+
+.nameD{
+    font-weight: 900 !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+.sizee{
+    font-size: 5rem;
+}
+
+.dremove{
+    text-decoration: none !important;
+
+}
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1; /* This allows the content to expand and push the footer down */
+}
+
+footer {
+    background-color: #333; /* Example background color */
+    color: #fff; /* Example text color */
+    text-align: center;
+    padding: 1rem;
+}
+
+.cardb{
+    border-radius: 0.5rem !important;
+    
+}
+

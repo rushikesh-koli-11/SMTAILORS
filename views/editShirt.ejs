@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Shirt Measurements</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-image: none; background-color: aliceblue;">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <i class="fa-brands fa-sketch"></i><span class="red"> SM</span>TAILOR'S
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/addCustomer">New Customer</a>
+            </li>
+            </ul>
+            <form class="d-flex" role="search" action="/searchCustomer" method="GET">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name" required>
+              <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+    <div class="container content">
+        <h2 class="mt-5">Edit Shirt Measurements</h2>
+        <form action="/editShirt/<%= customer._id %>" method="POST">
+          
+          
+          
+          <div class="mb-3">
+                <label for="type" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>प्रकार</b>(A- ओपन शर्ट किंवा B- भू शर्ट): </label>
+                <input type="String" class="form-control" id="type" name="shirtMeasurements[type]" value="<%= customer.measurements.shirt.type %>" placeholder="A किंवा B">
+            </div>
+
+          <div class="mb-3">
+                <label for="collar" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>लांबी: </b></label>
+                <input type="String" class="form-control" id="collar" name="shirtMeasurements[collar]" value="<%= customer.measurements.shirt.collar %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="chest" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>छाती:</b></label>
+                <input type="String" class="form-control" id="chest" name="shirtMeasurements[chest]" value="<%= customer.measurements.shirt.chest %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="waist" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>पोट:</b></label>
+                <input type="String" class="form-control" id="waist" name="shirtMeasurements[waist]" value="<%= customer.measurements.shirt.waist %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="seat" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>सीट:</b></label>
+                <input type="String" class="form-control" id="seat" name="shirtMeasurements[seat]" value="<%= customer.measurements.shirt.seat %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="frontWidth" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>सोल्डर:</b></label>
+                <input type="String" class="form-control" id="frontWidth" name="shirtMeasurements[frontWidth]" value="<%= customer.measurements.shirt.frontWidth %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="firstButton" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>बाही लांबी:</b></label>
+                <input type="String" class="form-control" id="firstButton" name="shirtMeasurements[firstButton]" value="<%= customer.measurements.shirt.firstButton %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="sleeveLength" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>कॉलर:</b></label>
+                <input type="String" class="form-control" id="sleeveLength" name="shirtMeasurements[sleeveLength]" value="<%= customer.measurements.shirt.sleeveLength %>">
+            </div>
+
+            <div class="mb-3">
+                <label for="shortSleeveLength" class="form-label"><i class="fa-solid fa-hand-point-right"></i> <b>कप:</b></label>
+                <input type="String" class="form-control" id="shortSleeveLength" name="shirtMeasurements[shortSleeveLength]" value="<%= customer.measurements.shirt.shortSleeveLength %>">
+            </div>
+
+            <!-- Add other shirt measurement fields here -->
+            <button type="submit" class="btn btn-success ">Save Changes <i class="fa-regular fa-floppy-disk"></i></button>
+        </form>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-2">
+        <div class="container">
+            <div class="d-flex justify-content-center mb-3">
+                <a href="https://www.instagram.com/rushiikoli_?igsh=MmVlMjlkMTBhMg%3D%3D&utm_source=qr" class="text-white mx-2" target="_blank">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://t.me/PYQWALA" class="text-white mx-2" target="_blank">
+                    <i class="fab fa-telegram fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rushikeshkoli/" class="text-white mx-2" target="_blank">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://wa.me/9271203387" class="text-white mx-2" target="_blank">
+                    <i class="fab fa-whatsapp fa-2x"></i>
+                </a>
+            </div>
+            <div class="mb-3 dremove">
+                <a href="/" class="text-white mx-2 ">Privacy Policy</a>
+                <a href="/" class="text-white mx-2">About Us</a>
+                <a href="/" class="text-white mx-2">Contact Us</a>
+                <a href="/" class="text-white mx-2"></a>
+            </div>
+            <p class="mb-0">© 2024 Developed by Rushikesh koli&#129535; +919579695273</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
